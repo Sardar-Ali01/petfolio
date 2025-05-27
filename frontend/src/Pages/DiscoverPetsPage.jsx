@@ -29,7 +29,7 @@ const DiscoverPetsPage = () => {
         maxPrice: maxPrice || undefined,
         vaccinated: vaccinatedOnly || undefined,
       };
-      const res = await axios.get("http://localhost:5000/api/pets/discover-pets", { params });
+      const res = await axios.get("https://petfolio-bc78b5df99a2.herokuapp.com/api/pets/discover-pets", { params });
       setPets(res.data);
       setFilteredPets(res.data);
       setCurrentPage(1);

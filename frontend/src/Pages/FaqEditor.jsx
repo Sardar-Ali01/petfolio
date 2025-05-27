@@ -14,7 +14,7 @@ const FaqEditor = () => {
   }, []);
 
   const fetchFaqs = async () => {
-    const res = await axios.get('http://localhost:5000/api/faqs');
+    const res = await axios.get('https://petfolio-bc78b5df99a2.herokuapp.com/api/faqs');
     setFaqs(res.data);
   };
 
@@ -22,12 +22,12 @@ const FaqEditor = () => {
     e.preventDefault();
     try {
       if (editingId) {
-        await axios.put(`http://localhost:5000/api/faqs/${editingId}`, { question, answer }, {
+        await axios.put(`https://petfolio-bc78b5df99a2.herokuapp.com/api/faqs/${editingId}`, { question, answer }, {
           headers: { Authorization: `Bearer ${token}` }
         });
         toast.success('FAQ updated');
       } else {
-        await axios.post('http://localhost:5000/api/faqs', { question, answer }, {
+        await axios.post('https://petfolio-bc78b5df99a2.herokuapp.com/api/faqs', { question, answer }, {
           headers: { Authorization: `Bearer ${token}` }
         });
         toast.success('FAQ added');
@@ -48,7 +48,7 @@ const FaqEditor = () => {
   };
 
   const handleDelete = async (id) => {
-    await axios.delete(`http://localhost:5000/api/faqs/${id}`, {
+    await axios.delete(`https://petfolio-bc78b5df99a2.herokuapp.com/api/faqs/${id}`, {
       headers: { Authorization: `Bearer ${token}` }
     });
     toast.success('FAQ deleted');

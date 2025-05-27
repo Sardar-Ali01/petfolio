@@ -23,7 +23,7 @@ const MessageInput = ({ socket, selectedChat, user, onSend }) => {
     if (!text.trim()) return;
 
     try {
-      const res = await axios.post('http://localhost:5000/api/messages', {
+      const res = await axios.post('https://petfolio-bc78b5df99a2.herokuapp.com/api/messages', {
         chatId: selectedChat._id,
         text
       }, {

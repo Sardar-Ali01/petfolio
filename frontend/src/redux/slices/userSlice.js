@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 // Base API
-const API = 'http://localhost:5000/api/profile';
+const API = 'https://petfolio-bc78b5df99a2.herokuapp.com/api/profile';
 
 // Auth headers
 const getAuthHeaders = () => ({

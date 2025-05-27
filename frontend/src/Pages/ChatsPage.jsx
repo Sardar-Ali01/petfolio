@@ -15,7 +15,7 @@ const ChatsPage = () => {
   const [selectedChat, setSelectedChat] = useState(null);
 
   // ✅ Initialize socket only once
-  const socket = useMemo(() => io('http://localhost:5000'), []);
+  const socket = useMemo(() => io('https://petfolio-bc78b5df99a2.herokuapp.com'), []);
 
   // ✅ Join personal socket room
   useEffect(() => {
@@ -65,7 +65,7 @@ const ChatsPage = () => {
 
     const fetchChats = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/chats', {
+        const res = await axios.get('https://petfolio-bc78b5df99a2.herokuapp.com/api/chats', {
           headers: { Authorization: `Bearer ${token}` }
         });
 
@@ -80,7 +80,7 @@ const ChatsPage = () => {
           if (existingChat) {
             setSelectedChat(existingChat);
           } else {
-            const chatRes = await axios.post('http://localhost:5000/api/chats', {
+            const chatRes = await axios.post('https://petfolio-bc78b5df99a2.herokuapp.com/api/chats', {
               senderId: user._id,
               receiverId: targetUserId
             }, {

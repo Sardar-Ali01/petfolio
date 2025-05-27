@@ -16,7 +16,7 @@ const FavoritesPage = () => {
         const token = localStorage.getItem('token');
         if (!token) return;
 
-        const res = await axios.get('http://localhost:5000/api/profile/favorites', {
+        const res = await axios.get('https://petfolio-bc78b5df99a2.herokuapp.com/api/profile/favorites', {
           headers: { Authorization: `Bearer ${token}` }
         });
         setFavorites(res.data);
@@ -35,7 +35,7 @@ const FavoritesPage = () => {
     try {
       const token = localStorage.getItem('token');
       if (!token) return;
-      await axios.delete(`http://localhost:5000/api/profile/favorites/${id}`, {
+      await axios.delete(`https://petfolio-bc78b5df99a2.herokuapp.com/api/profile/favorites/${id}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setFavorites((prev) => prev.filter((pet) => pet._id !== id));

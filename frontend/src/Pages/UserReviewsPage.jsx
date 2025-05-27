@@ -16,7 +16,7 @@ const UserReviewsPage = () => {
   // Fetch all reviews
   const fetchReviews = async () => {
     try {
-      const res = await axios.get(`http://localhost:5000/api/reviews/${sellerId}`);
+      const res = await axios.get(`https://petfolio-bc78b5df99a2.herokuapp.com/api/reviews/${sellerId}`);
       setReviews(res.data);
     } catch (err) {
       console.error('Failed to fetch reviews:', err);
@@ -26,7 +26,7 @@ const UserReviewsPage = () => {
   // Fetch average rating
   const fetchAverage = async () => {
     try {
-      const res = await axios.get(`http://localhost:5000/api/reviews/${sellerId}/average`);
+      const res = await axios.get(`https://petfolio-bc78b5df99a2.herokuapp.com/api/reviews/${sellerId}/average`);
       setRatingData(res.data);
     } catch (err) {
       console.error('Failed to fetch average rating:', err);
@@ -71,7 +71,7 @@ const UserReviewsPage = () => {
 
     try {
       await axios.post(
-        `http://localhost:5000/api/reviews/${sellerId}`,
+        `https://petfolio-bc78b5df99a2.herokuapp.com/api/reviews/${sellerId}`,
         { rating, reviewText, userId },
         { headers: { Authorization: `Bearer ${token}` } }
       );

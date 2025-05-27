@@ -230,17 +230,17 @@ const PetDetailsPage = () => {
   useEffect(() => {
     const fetchPet = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/pets/details/${id}`);
+        const res = await axios.get(`https://petfolio-bc78b5df99a2.herokuapp.com/api/pets/details/${id}`);
         setPet(res.data);
 
         if (res.data.owner?._id) {
-          const ratingRes = await axios.get(`http://localhost:5000/api/reviews/${res.data.owner._id}/average`);
+          const ratingRes = await axios.get(`https://petfolio-bc78b5df99a2.herokuapp.com/api/reviews/${res.data.owner._id}/average`);
           setRatingData(ratingRes.data || { avgRating: 0, totalReviews: 0 });
         }
 
         const token = localStorage.getItem('token');
         if (token) {
-          const favRes = await axios.get(`http://localhost:5000/api/profile/favorites`, {
+          const favRes = await axios.get(`https://petfolio-bc78b5df99a2.herokuapp.com/api/profile/favorites`, {
             headers: { Authorization: `Bearer ${token}` }
           });
           const isFav = favRes.data.some((fav) => fav._id === id);
@@ -272,11 +272,11 @@ const PetDetailsPage = () => {
       }
 
       if (isFavorite) {
-        await axios.delete(`http://localhost:5000/api/profile/favorites/${id}`, {
+        await axios.delete(`https://petfolio-bc78b5df99a2.herokuapp.com/api/profile/favorites/${id}`, {
           headers: { Authorization: `Bearer ${token}` }
         });
       } else {
-        await axios.post(`http://localhost:5000/api/profile/favorites/${id}`, {}, {
+        await axios.post(`https://petfolio-bc78b5df99a2.herokuapp.com/api/profile/favorites/${id}`, {}, {
           headers: { Authorization: `Bearer ${token}` }
         });
       }

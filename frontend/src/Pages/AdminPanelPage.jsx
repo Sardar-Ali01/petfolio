@@ -24,10 +24,10 @@ const AdminPanelPage = () => {
   const fetchData = async () => {
     try {
       setLoading(true);
-      const usersRes = await axios.get(`http://localhost:5000/api/admin/users?search=${userSearch}`, {
+      const usersRes = await axios.get(`https://petfolio-bc78b5df99a2.herokuapp.com/api/admin/users?search=${userSearch}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
-      const listingsRes = await axios.get(`http://localhost:5000/api/admin/listings?search=${listingSearch}`, {
+      const listingsRes = await axios.get(`https://petfolio-bc78b5df99a2.herokuapp.com/api/admin/listings?search=${listingSearch}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setUsers(usersRes.data);
@@ -42,7 +42,7 @@ const AdminPanelPage = () => {
 
   const fetchStats = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/admin/stats', {
+      const res = await axios.get('https://petfolio-bc78b5df99a2.herokuapp.com/api/admin/stats', {
         headers: { Authorization: `Bearer ${token}` },
       });
       setStats(res.data);
@@ -66,12 +66,12 @@ const AdminPanelPage = () => {
     try {
       setLoading(true);
       if (type === 'deleteUser') {
-        await axios.delete(`http://localhost:5000/api/admin/users/${id}`, {
+        await axios.delete(`https://petfolio-bc78b5df99a2.herokuapp.com/api/admin/users/${id}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         toast.success('User Deleted');
       } else if (type === 'deleteListing') {
-        await axios.delete(`http://localhost:5000/api/admin/listings/${id}`, {
+        await axios.delete(`https://petfolio-bc78b5df99a2.herokuapp.com/api/admin/listings/${id}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         toast.success('Listing Deleted');

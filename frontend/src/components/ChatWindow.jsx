@@ -15,7 +15,7 @@ const ChatWindow = ({ socket, selectedChat, user }) => {
     const fetchMessages = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:5000/api/messages/${selectedChat._id}`,
+          `https://petfolio-bc78b5df99a2.herokuapp.com/api/messages/${selectedChat._id}`,
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -26,7 +26,7 @@ const ChatWindow = ({ socket, selectedChat, user }) => {
 
         // Mark as read
         await axios.patch(
-          `http://localhost:5000/api/messages/read/${selectedChat._id}`,
+          `https://petfolio-bc78b5df99a2.herokuapp.com/api/messages/read/${selectedChat._id}`,
           {},
           { headers: { Authorization: `Bearer ${token}` } }
         );

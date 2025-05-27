@@ -8,7 +8,7 @@ import axios from 'axios';
 export const addPet = createAsyncThunk('pet/addPet', async (formData, { rejectWithValue }) => {
   try {
     const token = localStorage.getItem('token');
-    const res = await axios.post('http://localhost:5000/api/pets/add', formData, {
+    const res = await axios.post('https://petfolio-bc78b5df99a2.herokuapp.com/api/pets/add', formData, {
       headers: {
         'Content-Type': 'multipart/form-data',
         Authorization: `Bearer ${token}`,
@@ -25,7 +25,7 @@ export const addPet = createAsyncThunk('pet/addPet', async (formData, { rejectWi
 export const fetchMyAds = createAsyncThunk('pet/fetchMyAds', async (_, { rejectWithValue }) => {
   try {
     const token = localStorage.getItem('token');
-    const res = await axios.get('http://localhost:5000/api/pets/my-ads', {
+    const res = await axios.get('https://petfolio-bc78b5df99a2.herokuapp.com/api/pets/my-ads', {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -39,7 +39,7 @@ export const fetchMyAds = createAsyncThunk('pet/fetchMyAds', async (_, { rejectW
 export const deleteAd = createAsyncThunk('pet/deleteAd', async (id, { rejectWithValue }) => {
   try {
     const token = localStorage.getItem('token');
-    await axios.delete(`http://localhost:5000/api/pets/${id}`, {
+    await axios.delete(`https://petfolio-bc78b5df99a2.herokuapp.com/api/pets/${id}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -53,7 +53,7 @@ export const deleteAd = createAsyncThunk('pet/deleteAd', async (id, { rejectWith
 export const getPetById = createAsyncThunk('pet/getPetById', async (id, { rejectWithValue }) => {
   try {
     const token = localStorage.getItem('token');
-    const res = await axios.get(`http://localhost:5000/api/pets/details/${id}`, {
+    const res = await axios.get(`https://petfolio-bc78b5df99a2.herokuapp.com/api/pets/details/${id}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -69,7 +69,7 @@ export const editPet = createAsyncThunk(
   async ({ id, data }, { rejectWithValue }) => {
     try {
       const token = localStorage.getItem('token');
-      const res = await axios.put(`http://localhost:5000/api/pets/${id}`, data, {
+      const res = await axios.put(`https://petfolio-bc78b5df99a2.herokuapp.com/api/pets/${id}`, data, {
         headers: {
           Authorization: `Bearer ${token}`,
           'Content-Type': 'application/json',
