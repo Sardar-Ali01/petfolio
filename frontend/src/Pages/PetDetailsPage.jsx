@@ -312,10 +312,10 @@ const PetDetailsPage = () => {
 
         <div className="flex flex-col md:flex-row gap-6">
           <div className="w-full md:w-2/3 relative">
-            <img
+            <img 
               src={pet.images[currentImageIndex]}
               alt={pet.name}
-              className="rounded-lg w-full h-[400px] object-cover object-center"
+              className="rounded-lg w-full h-[400px] object-contain"
             />
             {pet.images.length > 1 && (
               <>
@@ -330,25 +330,29 @@ const PetDetailsPage = () => {
           </div>
 
           <div className="w-full md:w-1/3 space-y-4">
-            <div className="bg-white p-4 rounded-lg shadow-md">
+            <div className="bg-purple-100 p-4 rounded-lg shadow-md">
               <p className="text-gray-500 text-sm">Listed by private user</p>
               <h2 className="text-lg font-bold">{pet.owner?.name || 'Unknown Seller'}</h2>
               <p className="text-sm text-gray-600">Member since {new Date(pet.owner?.createdAt).toLocaleDateString() || 'N/A'}</p>
               <div className="flex flex-col gap-2 mt-4">
-                <button onClick={() => setShowPhone(!showPhone)} className="border border-gray-300 py-2 rounded hover:bg-gray-50">
-                  <FaPhone className="inline mr-2" />
-                  {showPhone ? pet.owner?.phone || 'No number' : 'Show phone number'}
-                </button>
-                <Link
-                  to={`/chats?userId=${pet.owner?._id}`}
-                  className="border border-gray-300 py-2 rounded hover:bg-gray-50 text-center block"
-                >
-                  💬 Chat
-                </Link>
+                <button
+  onClick={() => setShowPhone(!showPhone)}
+  className="bg-purple-600 text-white py-2 rounded hover:bg-purple-700 transition-colors duration-300 w-full"
+>
+  <FaPhone className="inline mr-2" />
+  {showPhone ? pet.owner?.phone || 'No number' : 'Show phone number'}
+</button>
+
+<Link
+  to={`/chats?userId=${pet.owner?._id}`}
+  className="bg-green-600 text-white py-2 rounded hover:bg-green-700 text-center block transition-colors duration-300 w-full"
+>
+  💬 Chat
+</Link>
               </div>
             </div>
 
-            <div className="bg-white p-4 rounded-lg shadow-md">
+            <div className="bg-purple-100 p-4 rounded-lg shadow-md">
               <p className="text-sm font-medium mb-1">Location</p>
               <div className="flex items-center text-gray-700">
                 <FaMapMarkerAlt className="mr-2" />
@@ -356,7 +360,7 @@ const PetDetailsPage = () => {
               </div>
             </div>
 
-            <div className="bg-white p-4 rounded-lg shadow-md">
+            <div className="bg-purple-100 p-4 rounded-lg shadow-md">
               <div className="flex items-center justify-between">
                 <div className="flex items-center text-yellow-500">
                   {renderStars(ratingData.avgRating)}
@@ -376,7 +380,7 @@ const PetDetailsPage = () => {
         </div>
 
         {/* Title Box */}
-        <div className="bg-white mt-6 p-6 rounded-lg shadow-md relative">
+        <div className="bg-purple-100 p-4 rounded-lg shadow-md">
           <div className="flex justify-between items-start">
             <div>
               <h2 className="text-2xl font-bold mb-1">PKR {pet.price.toLocaleString()}</h2>
