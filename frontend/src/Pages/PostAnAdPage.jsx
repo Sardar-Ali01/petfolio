@@ -38,7 +38,7 @@ const PostAnAdPage = () => {
           const imgData = new FormData();
           imgData.append('file', files[0]);
 
-          const response = await axios.post('http://localhost:8000/predict', imgData, {
+          const response = await axios.post('https://7cf0-34-75-144-227.ngrok-free.app', imgData, {
             headers: { 'Content-Type': 'multipart/form-data' },
           });
 
