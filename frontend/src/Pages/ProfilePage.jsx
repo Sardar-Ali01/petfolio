@@ -45,7 +45,7 @@ const ProfilePage = () => {
       };
       setFormData(incoming);
       setOriginalData(incoming);
-      setPreview(incoming.profilePic || '/src/assets/images/profile-placeholder.png');
+      setPreview(incoming.profilePic || '/assets/images/profile-placeholder.png');
     }
   }, [profile]);
 
@@ -117,7 +117,7 @@ const ProfilePage = () => {
   const handleDiscard = () => {
     if (originalData) {
       setFormData(originalData);
-      setPreview(originalData.profilePic || '/src/assets/images/profile-placeholder.png');
+      setPreview(originalData.profilePic || '/assets/images/profile-placeholder.png');
     }
   };
 

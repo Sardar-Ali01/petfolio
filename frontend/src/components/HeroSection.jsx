@@ -32,16 +32,16 @@ const HeroSection = () => {
   <img src="src\assets\images\bird.jpg" alt="bird" class="absolute top-0 left-0 w-32 h-auto"/>
        </div> */}
           <div>
-            <img src="src\assets\images\cat2.jpg" alt="Cat 2" className="w-full h-48 object-cover rounded-lg shadow-md" />
+            <img src="/assets/images/cat2.jpg" alt="Cat 2" className="w-full h-48 object-cover rounded-lg shadow-md" />
           </div>
           <div>
-            <img src="src\assets\images\dog1.jpg" alt="Cat 3" className="w-full h-48 object-cover rounded-lg shadow-md" />
+            <img src="/assets/images/dog1.jpg" alt="Cat 3" className="w-full h-48 object-cover rounded-lg shadow-md" />
           </div>
           <div>
-            <img src="src\assets\images\dog2.jpg" alt="Cat 4" className="w-full h-48 object-cover rounded-lg shadow-md" />
+            <img src="/assets/images/dog2.jpg" alt="Cat 4" className="w-full h-48 object-cover rounded-lg shadow-md" />
           </div>
           <div>
-            <img src="src\assets\images\siamese-cat.webp" alt="Cat 5" className="w-full h-48 object-cover rounded-lg shadow-md" />
+            <img src="/assets/images/siamese-cat.webp" alt="Cat 5" className="w-full h-48 object-cover rounded-lg shadow-md" />
           </div>
         </div>
       </div>

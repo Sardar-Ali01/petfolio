@@ -4,17 +4,17 @@ const Testimonials = () => {
   const testimonials = [
     {
       name: 'Rayyan Sohail',
-      image: 'src/assets/images/rayyan.jpg',
+      image: '/assets/images/rayyan.jpg',
       text: 'PetFolio helped me find my sweet tabby, Luna! The AI breed detection is amazing, and I love the community vibe.',
     },
     {
       name: 'Sania Amjad',
-      image: 'src/assets/images/sania.jpg',
+      image: '/assets/images/sania.jpg',
       text: 'Adopting my energetic Beagle, Buddy, was a breeze. The safety features are top-notch—highly recommend!',
     },
     {
       name: 'Ahmad Fawad',
-      image: 'src/assets/images/fawad.jpg',
+      image: '/assets/images/fawad.jpg',
       text: 'I got my colorful parrot, Mango, through PetFolio. The fun process and user ratings made it unforgettable!',
     },
   ];
@@ -46,10 +46,10 @@ const Testimonials = () => {
 
         {/* Image Grid Section */}
         <div className="md:w-1/2 grid grid-cols-2 gap-4">
-          <img src="src/assets/images/female-dog.jpg" alt="Pet 1" className="rounded-lg shadow-md object-cover" />
-          <img src="src/assets/images/male-cat.jpg" alt="Pet 2" className="rounded-lg shadow-md object-cover" />
-          <img src="src/assets/images/male-dog.jpg" alt="Pet 3" className="rounded-lg shadow-md object-cover" />
-          <img src="src/assets/images/female-dog2.jpg" alt="Pet 4" className="rounded-lg shadow-md object-cover" />
+          <img src="/assets/images/female-dog.jpg" alt="Pet 1" className="rounded-lg shadow-md object-cover" />
+          <img src="/assets/images/male-cat.jpg" alt="Pet 2" className="rounded-lg shadow-md object-cover" />
+          <img src="/assets/images/male-dog.jpg" alt="Pet 3" className="rounded-lg shadow-md object-cover" />
+          <img src="/assets/images/female-dog2.jpg" alt="Pet 4" className="rounded-lg shadow-md object-cover" />
           {/* <img src="https://placehold.co/200x200?text=Pet5" alt="Pet 5" className="rounded-lg shadow-md object-cover" />
           <img src="https://placehold.co/200x200?text=Pet6" alt="Pet 6" className="rounded-lg shadow-md object-cover" /> */}
         </div>
